@@ -3,70 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>CAMILO Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos adicionales específicos para esta página si son necesarios */
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenidos a mi sitio web</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="/contacto.html">Contacto</a></li>
-                <li><a href="pages/Productos.html">Productos</a></li>
-                <li><a href="pages/Presupuesto.html">Presupuesto</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Mi Empresa" onerror="this.style.display='none'">
+                    <h1>Camilo Cafe</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="/views/productos.html">Productos</a></li>
+                    <li><a href="/views/presupuesto.html">Presupuesto</a></li>
+                    <li><a href="/views/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Contenido principal</h2>
-            <p>Este es un sitio web estático creado solo con HTML y CSS.</p>
+        <section class="hero">
+            <h2>Conoce nuestra Historia</h2>
+            <p>Somos una Familia dedicada a disfurtar y ver la felicidad de la gente al probar nuestros productos</p>
         </section>
+
+        <section class="section">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="section-grid">
+                <div class="card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Servimos Momentos y experiencias</h3>
+                    <p>Lo principal de nuestra cafeteria no es solo nuestra calidad si no el permitirte descansar de verdad
+                        de tu rutina diaria
+                    </p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Siembra de nuestro propio Cafe</h3>
+                    <p>Contamos con nuestros propios cultivos y verificamos que nuestro cafe no le falte ni un poco de 
+                        amor y alegria desde nuestra tierra
+                    </p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Productos echos con "Berraquera"</h3>
+                    <p>Desde nuestra patria tenenmos la condicion de echarle ganas de verdad a todo lo que hacemos
+                        y nuestro cafe no es la excepcion .</p>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
     </main>
-<!-- Footer -->
-    <footer class="footer">
+
+    <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>Sobre Nosotros</h3>
-                <p>Somos una empresa dedicada a crear soluciones digitales innovadoras para nuestros clientes.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
+                <h3>Camilo Cafe</h3>
+                <p>Ven y prueba nestro cafe echo con amor y ganas</p>
             </div>
             
             <div class="footer-section">
                 <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Calle Principal #123, Ciudad</p>
-                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-                <p><i class="fas fa-envelope"></i> info@ejemplo.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> CCalle de leganes central 1234</p>
+                <p><i class="fas fa-phone"></i>+34 234 567 890 </p>
+                <p><i class="fas fa-envelope"></i> camilo cafe@gmail.com</p>
             </div>
             
             <div class="footer-section">
                 <h3>Síguenos</h3>
                 <div class="social-links">
-                    <a href="#" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 Mi Empresa. Todos los derechos reservados.</p>
-        </div>
+            
     </footer>
-    
+
+    <script>
+        // JavaScript para manejar la página activa del menú
+        document.addEventListener('DOMContentLoaded', function() {
+            // Marcar página activa en el menú
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

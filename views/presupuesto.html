@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camilo Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Mi Empresa" onerror="this.style.display='none'">
+                    <h1>Camilo Cafe</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="presupuesto.html">Presupuesto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Solicita tu Presupuesto</h2>
+            <form id="presupuestoForm" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+" title="Solo letras y espacios">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required pattern="[0-9+\s]{9,}" title="Mínimo 9 dígitos">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Solicite más información *</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required minlength="10"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">He leído y acepto la <a href="#">Política de Privacidad</a> *</label>
+                </div>
+
+                <button type="submit" class="btn-submit" disabled>Enviar Solicitud</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Camilo Cafe</h3>
+                <p>Prueba nuestro delicioso cafe echo con amor y ganas</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Leganes central 1234</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i>Camilocafe@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para manejar la página activa del menú y validación del formulario
+        document.addEventListener('DOMContentLoaded', function() {
+            // Marcar página activa en el menú
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Validación del formulario
+            const nombre = document.getElementById('nombre');
+            const email = document.getElementById('email');
+            const telefono = document.getElementById('telefono');
+            const mensaje = document.getElementById('mensaje');
+            const privacidad = document.getElementById('privacidad');
+            const submitBtn = document.querySelector('.btn-submit');
+            
+            // Función para verificar el formulario
+            function checkForm() {
+                const isValid = 
+                    nombre.value.trim() !== '' &&
+                    email.validity.valid &&
+                    telefono.value.trim() !== '' &&
+                    mensaje.value.trim() !== '' &&
+                    privacidad.checked;
+                
+                submitBtn.disabled = !isValid;
+            }
+            
+            // Agregar event listeners
+            [nombre, email, telefono, mensaje, privacidad].forEach(element => {
+                element.addEventListener('input', checkForm);
+                element.addEventListener('change', checkForm);
+            });
+            
+            // Manejar envío del formulario
+            const form = document.getElementById('presupuestoForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!submitBtn.disabled) {
+                    alert('Formulario enviado correctamente');
+                    form.reset();
+                    submitBtn.disabled = true;
+                }
+            });
+
+            // Validación en tiempo real mientras se escribe
+            nombre.addEventListener('input', function() {
+                if (this.validity.patternMismatch) {
+                    this.setCustomValidity('Solo se permiten letras y espacios');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+
+            telefono.addEventListener('input', function() {
+                if (this.validity.patternMismatch) {
+                    this.setCustomValidity('El teléfono debe tener al menos 9 dígitos');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camilo Cafe</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Mi Empresa" onerror="this.style.display='none'">
+                    <h1>Camilo Cafe</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="presupuesto.html">Presupuesto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <h2>Nuestros Productos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../img/coffe .2.png" alt="Producto 1" onerror="this.src='https://via.placeholder.com/300x250?text=Producto+1'">
+                    <div class="gallery-overlay">
+                        <h3>Cafe 2.59</h3>
+                        <p>Delicioso cafe colombiano </p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../img/coffe .5.png" alt="Producto 2" onerror="this.src='https://via.placeholder.com/300x250?text=Producto+2'">
+                    <div class="gallery-overlay">
+                        <h3>Cafe americano 2,50</h3>
+                        <p>Descripción del producto</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../img/cofee .4.webp" alt="Producto 3" onerror="this.src='https://via.placeholder.com/300x250?text=Producto+3'">
+                    <div class="gallery-overlay">
+                        <h3>Cafe fuerte 3,42</h3>
+                        <p>Descripción del producto</p>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Camilo Cafe</h3>
+                <p>Vwen y prueba nuestro delicioso cafe echo con amor y ganas</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Leganes central 1234</p>
+                <p><i class="fas fa-phone"></i> +34 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> Camilocafe@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para manejar la página activa del menú
+        document.addEventListener('DOMContentLoaded', function() {
+            // Marcar página activa en el menú
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
